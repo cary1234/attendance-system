@@ -9,7 +9,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const Header = (props) => {
     return (
         <header>
-            {/* <nav className="navbar navbar-expand-lg navbar-light">
+            <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container-fluid">
                     <a href="#" className="navbar-brand">
                         <img src={logoUrl} height="75" alt="SPEDI Logo" />
@@ -33,10 +33,10 @@ const Header = (props) => {
                         </div>
                     </div>
                 </div>
-            </nav> */}
+            </nav>
 
 
-
+            {/* 
             <Navbar>
                 <Container>
                     <Navbar.Brand href="#home">
@@ -52,7 +52,7 @@ const Header = (props) => {
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>
+            </Navbar> */}
         </header>
     );
 }
