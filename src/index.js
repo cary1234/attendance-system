@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+
+//For bootstrap -Cary
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
