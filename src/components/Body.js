@@ -20,10 +20,10 @@ const Body = () => {
                 res.json())
             .then((response) => {
                 console.log(JSON.stringify(response))
-                getData(JSON.stringify(response));
+                getData(response);
             })
     }
-    const obj = JSON.parse(data)
+    const obj = JSON.parse(JSON.stringify(data))
     console.log("city only: " + obj.city)
     return (
         <>
