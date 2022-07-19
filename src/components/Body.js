@@ -19,11 +19,12 @@ const Body = () => {
             .then((res) =>
                 res.json())
             .then((response) => {
-                console.log(JSON.stringify(response))
-                getData(JSON.stringify(response));
+                console.log(response)
+                getData(response);
             })
     }
-    const obj = JSON.parse(data)
+    console.log("data only: " + JSON.stringify(data))
+    const obj = JSON.parse(JSON.stringify(data))
     console.log("city only: " + obj.city)
     return (
         <>
