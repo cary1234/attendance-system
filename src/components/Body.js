@@ -1,30 +1,35 @@
-
-import { Button, Modal, Container, Row, Col } from 'react-bootstrap';
-import Alert from 'react-bootstrap/Alert';
-import date from 'date-and-time';
+import { Container, Row, Col } from 'react-bootstrap';
 import Clock from 'react-live-clock';
-
 import Form from 'react-bootstrap/Form'
-
-
-
-import { Component } from "react";
-import { render } from "react-dom";
-import ReactDOM from 'react-dom'
+import { React, useState, useEffect } from "react";
 
 
 
 const Body = () => {
+
+    const [data, getData] = useState([])
+    const URL = 'https://ipinfo.io/json?token=5ec5b65121ca42';
+
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+    const fetchData = () => {
+        fetch(URL)
+            .then((res) =>
+                res.json())
+            .then((response) => {
+                console.log(JSON.stringify(response))
+                getData(JSON.stringify(response));
+            })
+    }
+    const obj = JSON.parse(data)
+    console.log("city only: " + obj.city)
     return (
         <>
             <Container >
-
                 <Row>
                     <Col className='text-center'>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Disabled input</Form.Label>
-                            <Form.Control placeholder="Disabled input" disabled />
-                        </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Disabled select menu</Form.Label>
                             <Form.Select disabled>
@@ -34,14 +39,58 @@ const Body = () => {
                         <Form.Group className="mb-3">
                             <Form.Check type="checkbox" label="Can't check this" disabled />
                         </Form.Group>
-                        <h1>
-                            <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
-                        </h1>
+
+                        <Form.Group className="mb-3 text-center">
+
+                            <Form.Select className="text-center">
+                                <option>Select Name</option>
+                                <option>Alfie-Lee Powell</option>
+                                <option>Amir Conley</option>
+                                <option>Barney Hirst</option>
+                                <option>Ciaron Robinson</option>
+                                <option>Claude Whyte</option>
+                                <option>Ismael English</option>
+                                <option>Pranav Smith</option>
+                                <option>Tamanna Warner</option>
+                                <option>Thierry Vaughn</option>
+                            </Form.Select>
+
+
+                            <Form.Group className="mb-3 border border-secondary">
+                                <Clock className='text-center' format={'MM/DD/YYYY HH:mm:ss'} ticking={true} timezone={'Asia/Singapore'} />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3">
+                                <Form.Control className="text-center" placeholder="Remarks" />
+
+                            </Form.Group>
+
+
+
+                            <Form.Select className="text-center">
+                                <option>{
+                                    obj.city
+                                }</option>
+                                <option>Alfie-Lee Powell</option>
+                                <option>Amir Conley</option>
+                                <option>Barney Hirst</option>
+                                <option>Ciaron Robinson</option>
+                                <option>Claude Whyte</option>
+                                <option>Ismael English</option>
+                                <option>Pranav Smith</option>
+                                <option>Tamanna Warner</option>
+                                <option>Thierry Vaughn</option>
+                            </Form.Select>
+                        </Form.Group>
+
+
+
                     </Col>
                 </Row>
 
-            </Container>
 
+
+            </Container>
         </>
     );
 }

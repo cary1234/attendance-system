@@ -1,9 +1,7 @@
-import PropTypes from 'prop-types'
+
 
 import logoUrl from '../assets/images/logo.png';
 
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 
 
 const Header = (props) => {

@@ -1,45 +1,33 @@
-import React from 'react';
-import { useState } from 'react';
-import { Helmet } from "react-helmet";
-
+import React, { useState } from 'react';
 import "./assets/css/styles.css"
 import 'bootstrap/dist/js/bootstrap.bundle'
-
-import date from 'date-and-time';
-
-import Clock from 'react-live-clock';
-
-import { Component } from "react";
-import { render } from "react-dom";
-import ReactDOM from 'react-dom'
-
-import Form from 'react-bootstrap/Form'
-
-
-
-
-import { Button, Modal, Container, Row, Col } from 'react-bootstrap';
-import Alert from 'react-bootstrap/Alert';
-
-
+import { Button, Modal } from 'react-bootstrap';
 import Header from './components/Header'
 import Body from './components/Body'
-import Timer from './components/Timer'
-
-
-
+import { createRoot } from "react-dom/client";
+import axios from 'axios';
 
 class App extends React.Component {
-  state = {
-    curDT: new Date().toLocaleString(),
-  }
+
+  // componentDidMount() {
+  //   fetch("https://ipinfo.io/json?token=5ec5b65121ca42").then(
+  //     (response) => response.json()
+  //   ).then(
+  //     (jsonResponse) => console.log(JSON.stringify(jsonResponse))
+  //   )
+  //}
+
+
+
+
   render() {
     return (
       <>
-
+        <div>{ }</div>
         <Header />
         <Body />
         <Attendance />
+
       </>
     );
   }
